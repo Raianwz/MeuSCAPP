@@ -1,19 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image 
-      source={require('./src/assets/login_logo_verde.png')}
-      style={styles.logo}
+      <Image
+        source={require('./src/assets/login_logo_verde.png')}
+        style={styles.logo}
       />
-      <Text>🫡 Em algum momento vai funcionar, talvez esse ano</Text>
+      <Text style={styles.welcome}>Bem-Vindo(a)!</Text>
+      <View>
+        <Text style={styles.loginText}> Email:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digte seu E-mail"
+          keyboardType="email-address"
+        />
+        <Text style={[styles.loginText, styles.auxmargintop]}> Senha:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digte seu Senha"
+          secureTextEntry={true}
+        />
+        <TouchableOpacity>
+          <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Entrar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.buttonCadastro]}>
+          <Text style={[styles.buttonText, styles.buttonTextCadastro]}>Cadastre-se</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,9 +43,64 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logo:{
+  logo: {
     width: 260,
     height: 148,
-    marginTop: 10
+  },
+  welcome: {
+    color: '#1F7E0C',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  loginText: {
+    marginTop: 10,
+    fontWeight: 'bold',
+    textAlign: 'left',
+    justifyContent: 'flex-start',
+    alignContent: 'flex-start',
+    fontSize: 16,
+  },
+  auxmargintop: {
+    marginTop: 20,
+  },
+  input: {
+    width: 250,
+    height: 40,
+    borderWidth: 1.1,
+    padding: 3,
+    borderRadius: 8,
+    textAlign: 'center',
+    fontSize: 14,
+  },
+  forgotpassword: {
+    marginTop: 12,
+    color: '#1F7E0C',
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 60,
+  },
+  button: {
+    backgroundColor: "#289E10",
+    width: 250,
+    height: 45,
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: 'center',
+    borderRadius: 15,
+    marginBottom: 18,
+  },
+  buttonCadastro: {
+    backgroundColor: '#FFF',
+    borderColor: '#1F7E0C',
+    borderWidth: 2,
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  buttonTextCadastro: {
+    color: '#1F7E0C',
   }
 });
