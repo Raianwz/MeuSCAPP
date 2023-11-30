@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Modal } from 'react-native';
+import { ModalForgotPassword } from './src/components/modal'
+
 
 export default function App() {
+  const [modalVisible, setModalVisisable] = useState(false)
+
   return (
     <View style={styles.container}>
       <Image
@@ -22,7 +27,7 @@ export default function App() {
           placeholder="Digte seu Senha"
           secureTextEntry={true}
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisisable(true)}>
           <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
@@ -31,6 +36,9 @@ export default function App() {
         <TouchableOpacity style={[styles.button, styles.buttonCadastro]}>
           <Text style={[styles.buttonText, styles.buttonTextCadastro]}>Cadastre-se</Text>
         </TouchableOpacity>
+        <Modal visible={modalVisible} animationType='fade' transparent={true}>
+          <ModalForgotPassword handleClose={() => setModalVisisable(false)} />
+        </Modal>
       </View>
       <StatusBar style="auto" />
     </View>
