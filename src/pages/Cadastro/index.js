@@ -4,7 +4,6 @@ import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import StatusBarColor from '../../components/statusBar';
 import CheckBox from 'expo-checkbox';
-//import CheckBox from '@react-native-community/checkbox';
 
 export default function Cadastro() {
   const navegation = useNavigation();
