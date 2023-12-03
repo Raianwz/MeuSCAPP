@@ -33,7 +33,7 @@ export default function Login() {
         <TouchableOpacity onPress={() => setModalVisisable(true)}>
           <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navegation.navigate('Menu')}>
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, styles.buttonCadastro]} onPress={() => navegation.navigate('Cadastro')}>
