@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import StatusBarColor from '../../components/statusBar';
 import { Ionicons } from '@expo/vector-icons';
 import { BandejaItem } from '../../components/bandejaItem'
