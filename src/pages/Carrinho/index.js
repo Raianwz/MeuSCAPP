@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
 import StatusBarColor from '../../components/statusBar';
 import { Ionicons } from '@expo/vector-icons';
+import CarrinhoItem from '../../components/carrinhoItem';
 
 
 export default function Carrinho() {
@@ -17,6 +18,7 @@ export default function Carrinho() {
             </View>
             <ScrollView>
                 <Text>Tela do Carrinho</Text>
+                <CarrinhoItem name='Laranja Perâ' price={4.6} />
             </ScrollView>
             <StatusBarColor />
         </View>

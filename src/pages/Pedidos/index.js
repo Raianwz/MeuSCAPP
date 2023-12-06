@@ -8,14 +8,15 @@ export default function Pedidos() {
     return (
         <View style={styles.container}>
             <View style={styles.titleBox}>
-                <View style={[styles.title,{justifyContent: 'center'}]}>
-                    <TouchableOpacity>
-                        <Ionicons name='basket' size={34} color="white" />
-                    </TouchableOpacity>
+                <View style={[styles.title, { justifyContent: 'center' }]}>
+                    <Ionicons name='basket' size={34} color="white" />
                     <Text style={styles.titleText}>Pedidos</Text>
                 </View>
             </View>
-            <Text>Tela Pedidos</Text>
+            <View style={styles.pedidos}>
+                <Text style={styles.pedidosText}>Você ainda não realizou um pedido</Text>
+            </View>
+                <Image style={{ position: 'absolute', opacity: 0.35, zIndex: -1, width: 320, height: 400, top: 180, left: 20, }} source={require('../../assets/m_brocolis.png')} />
             <StatusBarColor />
         </View>
     )
@@ -54,4 +55,17 @@ const styles = StyleSheet.create({
         fontSize: 14,
         backgroundColor: '#FFF'
     },
+    pedidos: {
+        backgroundColor: "rgba(255, 255, 255,0.25)",
+        height: '100%',
+        alignItems: 'center'
+    },
+    pedidosText:{
+        fontSize: 20,
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        color: '#156e03',
+        fontWeight: 'bold',
+        textShadowColor: '#000'
+    }
 })
