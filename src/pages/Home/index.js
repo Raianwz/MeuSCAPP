@@ -3,6 +3,7 @@ import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image, TextInput,
 import StatusBarColor from '../../components/statusBar';
 import { Ionicons } from '@expo/vector-icons';
 import { BandejaItem } from '../../components/bandejaItem'
+import { useNavigation } from '@react-navigation/native';
 
 const dataBandejas = [
     {
@@ -27,6 +28,7 @@ const dataBandejas = [
 ]
 
 export default function Home() {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styles.titleBox}>
@@ -36,12 +38,12 @@ export default function Home() {
                     </TouchableOpacity>
                     <Image style={styles.logoimgR} source={require('../../assets/m_tomate.png')} />
                     <Text style={styles.titleText}>Meu Sacolão</Text>
-                    <TouchableOpacity>
-                        <Ionicons name='cart' size={34} color="white" />
+                    <TouchableOpacity onPress={()=> navigation.navigate('Carrinho')}>
+                        <Ionicons name='cart' size={34} color="white"/>
                     </TouchableOpacity>
                 </View>
                 <TextInput style={styles.input} placeholder='Pesquisar' />
-                <Ionicons style={{ position: 'absolute', top: 50, right: 70, }} name='search' color="#bcbcbc" size={20} />
+                <Ionicons style={{ position: 'absolute', top: 56, right: 70, }} name='search' color="#bcbcbc" size={20} />
             </View>
             <ScrollView scrollEnabled={true}>
                 <View style={{ backgroundColor: "#FFFFFF", marginTop: 15, borderRadius: 4, flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -60,11 +62,13 @@ export default function Home() {
                 </View>
                 <View style={{ backgroundColor: "#FFFFFF", marginTop: 15, borderRadius: 4, flex: 1, }}>
                     <Text style={{ textAlign: 'center', fontSize: 20, color: '#289e10' }}>Prontos para Preparo</Text>
-                    <FlatList
-                        style={{marginTop: 15, width: "98%", marginLeft: 4,}}
-                        data={dataBandejas}
-                        renderItem={({ item }) => <BandejaItem data={item} />}
-                    />
+                        <ScrollView ve horizontal={true} style={{ width: "100%" }} >
+                            <FlatList
+                                style={{ marginTop: 15, width: "98%", marginLeft: 4, }}
+                                data={dataBandejas}
+                                renderItem={({ item }) => <BandejaItem data={item} />}
+                            />
+                        </ScrollView>
                 </View>
             </ScrollView>
             <StatusBarColor cor="#1F7E0C" />

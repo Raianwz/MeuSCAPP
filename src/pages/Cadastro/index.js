@@ -30,6 +30,12 @@ export default function Cadastro() {
           placeholder="Ex: Praça da Sé, 105"
           keyboardType='default'
         />
+        <Text style={styles.cformsText}>CEP</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Ex: 01001-001"
+          keyboardType='default'
+        />
         <Text style={styles.cformsText}>Celular</Text>
         <TextInput
           style={styles.input}
