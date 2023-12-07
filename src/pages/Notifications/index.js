@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
 import StatusBarColor from '../../components/statusBar';
 import { Ionicons } from '@expo/vector-icons';
-
+import NotifyItem from '../../components/notifyItem';
 
 export default function Notifications() {
     return (
@@ -16,7 +16,28 @@ export default function Notifications() {
                 </View>
             </View>
             <ScrollView>
-                <Text>Tela Notificações</Text>
+                <View>
+                    <NotifyItem Date={'Quinta-Feira 22/03/2023'}
+                        Time={'07:00'}
+                        Texto={"Cupom: \“MeuSacolao10\”  para 10% de desconto em sua próxima compra. Cupom não cumulativo, apenas um uso por cliente."}
+                        Validade={'VÁLIDO ATÉ 30/04/2023 23h59'}
+                        />
+                    <NotifyItem Date={'Quinta-Feira 12/03/2023'}
+                        Time={'06:58'}
+                        Texto={"Cupom: \“MeuSacolao10\”  para 10% de desconto em sua próxima compra. Cupom não cumulativo, apenas um uso por cliente."}
+                        Validade={'VÁLIDO ATÉ 19/03/2023 23h59'}
+                        />
+                    <NotifyItem Date={'Quinta-Feira 05/03/2023'}
+                        Time={'07:11'}
+                        Texto={"Cupom: \“MeuSacolao10\”  para 10% de desconto em sua próxima compra. Cupom não cumulativo, apenas um uso por cliente."}
+                        Validade={'VÁLIDO ATÉ 15/03/2023 23h59'}
+                        />
+                    <NotifyItem Date={'Quinta-Feira 02/02/2023'}
+                        Time={'07:00'}
+                        Texto={"Cupom: \“MeuSacolao10\”  para 10% de desconto em sua próxima compra. Cupom não cumulativo, apenas um uso por cliente."}
+                        Validade={'VÁLIDO ATÉ 12/02/2023 23h59'}
+                        />
+                </View>
             </ScrollView>
             <StatusBarColor />
         </View>

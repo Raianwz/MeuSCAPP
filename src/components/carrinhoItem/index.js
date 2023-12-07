@@ -1,11 +1,14 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons';
 
-export default function CarrinhoItem({ name, price }) {
+export default function CarrinhoItem({ name, price, onChangeValue }) {
     const [qtd, setQtd] = useState(1)
     const addQtd = () => { setQtd(qtd + 1) }
     const rmQtd = () => { if (qtd >= 0) { setQtd(qtd - 1) } if (qtd <= 0) { setQtd(0) } }
+
+    const retorno = (qtd) => { return qtd }
+    onChangeValue = retorno
 
     price = Number(price).toFixed(2) || 0
     return (
